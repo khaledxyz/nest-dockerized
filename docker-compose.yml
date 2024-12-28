@@ -1,0 +1,12 @@
+services:
+  nestjs:
+    build: .
+    container_name: nestjs
+    env_file:
+      - .env
+    restart: unless-stopped
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - '5000:5000'
+    command: npm run start:prod
